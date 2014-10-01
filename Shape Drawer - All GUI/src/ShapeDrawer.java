@@ -30,7 +30,12 @@ public class ShapeDrawer extends Canvas
 				{
 				canvas.setBackground(Color.yellow);
 				break;
-				}				
+				}
+			case 3:
+				{
+				canvas.setBackground(Color.blue);
+				break;
+				}
 			}
 			
 			JFrame frame = new JFrame();	       
@@ -43,21 +48,21 @@ public class ShapeDrawer extends Canvas
 	
 	public static void askQuestions()
 	    {
-		Object[] optionsThree = {"Square", "Circle"};
+		Object[] optionsThree = {"Square", "Circle", "Pentagon"};
 		shape = JOptionPane.showOptionDialog(frame, "What shape do you want to draw?",
 				"Shape Choice",
 				JOptionPane.YES_NO_CANCEL_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				null, optionsThree, optionsThree[0]);	
 		
-		Object[] optionsOne = {"White", "Black", "Yellow"};
+		Object[] optionsOne = {"White", "Black", "Yellow", "Blue"};
 		backgroundColor = JOptionPane.showOptionDialog(frame, "What color do you want the background to be?",
 				"Background Color Choice",
 				JOptionPane.YES_NO_CANCEL_OPTION,
 				JOptionPane.QUESTION_MESSAGE,
 				null, optionsOne, optionsOne[0]);
 		
-		Object[] optionsTwo = {"Blue", "Red", "Green", "Yellow", "Black", "White"};
+		Object[] optionsTwo = {"Blue", "Red", "Green", "Yellow", "Black", "White", "Gray"};
 		shapeColor = JOptionPane.showOptionDialog(frame, "What color do you want the shape to be?",
 				"Shape Color Choice",
 				JOptionPane.YES_NO_CANCEL_OPTION,
@@ -100,6 +105,11 @@ public class ShapeDrawer extends Canvas
 				graphics.setColor(Color.white);
 				break;
 				}
+			case 6:
+				{
+				graphics.setColor(Color.gray);
+				break;
+				}
 			}
 		
 		switch(shape)
@@ -113,6 +123,13 @@ public class ShapeDrawer extends Canvas
 				{
 				graphics.fillOval(50, 30, 300, 300);
 				break;
+				}
+			case 2:
+				{
+				int[] xPoints = {100, 150, 125, 75, 50};
+				int[] yPoints = {60, 80, 120, 120, 80};
+				
+				graphics.fillPolygon(xPoints, yPoints, 5);
 				}
 			}
 		}
